@@ -51,7 +51,7 @@ func MyEnums(db XODB, schema string) ([]*Enum, error) {
 
 	// sql query
 	const sqlstr = `SELECT ` +
-		`DISTINCT column_name AS enum_name ` +
+		`DISTINCT CONCAT(table_name, "_", column_name) AS enum_name ` +
 		`FROM information_schema.columns ` +
 		`WHERE data_type = 'enum' AND table_schema = ?`
 

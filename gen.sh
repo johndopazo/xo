@@ -185,7 +185,7 @@ ENDSQL
 # mysql enum list query
 $XOBIN $MYDB -a -N -M -B -T Enum -F MyEnums -o $DEST $EXTRA << ENDSQL
 SELECT
-  DISTINCT column_name AS enum_name
+  DISTINCT CONCAT(table_name, "_", column_name) AS enum_name
 FROM information_schema.columns
 WHERE data_type = 'enum' AND table_schema = %%schema string%%
 ENDSQL
@@ -195,7 +195,7 @@ $XOBIN $MYDB -N -M -B -1 -T MyEnumValue -F MyEnumValues -o $DEST $EXTRA << ENDSQ
 SELECT
   SUBSTRING(column_type, 6, CHAR_LENGTH(column_type) - 6) AS enum_values
 FROM information_schema.columns
-WHERE data_type = 'enum' AND table_schema = %%schema string%% AND column_name = %%enum string%%
+WHERE data_type = 'enum' AND table_schema = %%schema string%% AND CONCAT(table_name, "_", column_name) = %%enum string%%
 ENDSQL
 
 # mysql autoincrement list query
