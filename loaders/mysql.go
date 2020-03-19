@@ -13,8 +13,16 @@ import (
 
 func init() {
 	internal.SchemaLoaders["mysql"] = internal.TypeLoader{
-		ParamN:          func(int) string { return "?" },
-		MaskFunc:        func() string { return "?" },
+		ParamN:   func(int) string { return "?" },
+		MaskFunc: func() string { return "?" },
+		Esc: map[internal.EscType]func(string) string{
+			internal.ColumnEsc: func(s string) string {
+				if _, ok := mysqlReserved[s]; ok {
+					return "`" + s + "`"
+				}
+				return s
+			},
+		},
 		ProcessRelkind:  MyRelkind,
 		Schema:          MySchema,
 		ParseType:       MyParseType,
@@ -29,6 +37,10 @@ func init() {
 		IndexColumnList: models.MyIndexColumns,
 		QueryColumnList: MyQueryColumns,
 	}
+}
+
+var mysqlReserved = map[string]struct{}{
+	"limit": struct{}{},
 }
 
 // MySchema retrieves the name of the current schema.
