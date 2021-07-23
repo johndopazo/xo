@@ -1,0 +1,36 @@
+# cloud.google.com/go v0.34.0
+cloud.google.com/go/civil
+# github.com/alexflint/go-arg v0.0.0-20181120184500-fb7d95b61ba8
+github.com/alexflint/go-arg
+# github.com/alexflint/go-scalar v1.0.0
+github.com/alexflint/go-scalar
+# github.com/denisenkom/go-mssqldb v0.0.0-20181014144952-4e0d7dc8888f
+github.com/denisenkom/go-mssqldb
+github.com/denisenkom/go-mssqldb/internal/cp
+# github.com/gedex/inflector v0.0.0-20170307190818-16278e9db813
+github.com/gedex/inflector
+# github.com/go-sql-driver/mysql v1.4.1
+github.com/go-sql-driver/mysql
+# github.com/knq/snaker v0.0.0-20180306023312-d9ad1e7f342a
+github.com/knq/snaker
+# github.com/lib/pq v1.0.0
+github.com/lib/pq
+github.com/lib/pq/oid
+# github.com/mattn/go-sqlite3 v1.10.0
+github.com/mattn/go-sqlite3
+# github.com/pkg/errors v0.8.0
+github.com/pkg/errors
+# github.com/xo/dburl v0.0.0-20181118001949-f3ca07bd6afc
+github.com/xo/dburl
+# github.com/xo/xoutil v0.0.0-20171112033149-46189f4026a5
+github.com/xo/xoutil
+# golang.org/x/crypto v0.0.0-20181203042331-505ab145d0a9
+golang.org/x/crypto/md4
+# golang.org/x/sync v0.0.0-20181108010431-42b317875d0f
+golang.org/x/sync/errgroup
+# google.golang.org/appengine v1.3.0
+google.golang.org/appengine/cloudsql
+# gopkg.in/rana/ora.v4 v4.1.15
+gopkg.in/rana/ora.v4
+gopkg.in/rana/ora.v4/date
+gopkg.in/rana/ora.v4/num
